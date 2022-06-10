@@ -45,7 +45,7 @@ function Charactercard({
 
   return (
     <Card
-      className={styles.Card_Link}
+      className={styles.card_link}
       style={!description ? { gap: "1rem" } : null}
     >
       <div className={styles.info}>

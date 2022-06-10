@@ -1,5 +1,5 @@
 import { Grid, Loading, Pagination } from "@nextui-org/react";
-import Charactercard from "components/Card/Charactercard";
+import Charactercard from "components/Charactercard/Charactercard.jsx";
 import React, { useCallback, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getCharactersAction } from "reduxDucks/charactersDuck";
