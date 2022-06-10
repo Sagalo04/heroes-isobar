@@ -1,5 +1,5 @@
 import { Grid, Loading, Pagination } from "@nextui-org/react";
-import Card from "components/Card/Charactercard";
+import Charactercard from "components/Card/Charactercard";
 import React, { useCallback, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getCharactersAction } from "reduxDucks/charactersDuck";
@@ -35,7 +35,7 @@ function Home({
 
   return (
     <div className={styles.Home}>
-      <Grid.Container gap={2} className={styles.homeGrid} justify="center">
+      <Grid.Container gap={2} justify="center" className={styles.homeGrid}>
         {chars ? (
           fetching ? (
             <div className={styles.Loading}>
@@ -45,7 +45,7 @@ function Home({
             chars.map((char) => {
               return (
                 <Grid sm={4} xs={9} key={char.name}>
-                  <Card
+                  <Charactercard
                     src={char.thumbnail.path + "." + char.thumbnail.extension}
                     name={char.name}
                     description={char.description}

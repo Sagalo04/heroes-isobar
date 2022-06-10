@@ -1,7 +1,7 @@
 import { Avatar, Card } from "@nextui-org/react";
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Card.module.scss";
+import styles from "./Charactercard.module.scss";
 import { Icon } from "@iconify/react";
 import confetti from "canvas-confetti";
 
