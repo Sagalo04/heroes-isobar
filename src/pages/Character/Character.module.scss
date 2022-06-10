@@ -1,0 +1,35 @@
+.CharacterPage{
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gridImg{
+    img{
+        width: 100%;
+        border-radius: 30px;
+    }
+}
+
+
+.reactions_react{
+    display: flex;
+    gap: .5rem;
+    .clickeableIcon:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: all ease 0.5s;
+    }
+  }    
+
+@media screen and (max-width: 960px) {
+    .CharacterContainer{
+        margin-top: 6rem;
+    }
+}

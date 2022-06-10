@@ -1,0 +1,53 @@
+.Card_Link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 156px;
+  padding: 1rem;
+
+  border-radius: 10px;
+  background-color: #1c1c1c;
+
+  color: white;
+
+  .info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  h4, p{
+    margin-top: 0;
+  }
+
+  h4{
+    margin-bottom: 1rem;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+  .reactions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a{
+      font-weight: 700;
+      color: aliceblue;
+    }
+    .reactions_react{
+      display: flex;
+      gap: .5rem;
+      .clickeableIcon:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all ease 0.5s;
+      }
+    }
+  }
+}
