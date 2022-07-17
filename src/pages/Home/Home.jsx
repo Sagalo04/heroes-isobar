@@ -1,9 +1,9 @@
+import React, { useCallback, useEffect, useState } from "react";
+import styles from "./Home.module.scss";
 import { Grid, Loading, Pagination } from "@nextui-org/react";
 import Charactercard from "components/Charactercard/Charactercard.jsx";
-import React, { useCallback, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getCharactersAction } from "reduxDucks/charactersDuck";
-import styles from "./Home.module.scss";
 import { AddReactionAction } from "reduxDucks/likesDuck";
 
 /**
