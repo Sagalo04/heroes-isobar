@@ -16,7 +16,7 @@ Finally, you should execute the command `npm start` that will open the following
 
 To run this API you must have installed [PHP] [composer](https://getcomposer.org) and [Laravel](https://laravel.com)
 
-For the backend you should clone or download the repository in the following link [ApiIsobar](https://github.com/Sagalo04/ApiIsobar) and run it onb a local server such as [XAMPP](https://www.apachefriends.org)
+For the backend you should clone or download the repository in the following link [ApiIsobar](https://github.com/Sagalo04/ApiIsobar) and run it on a local server such as [XAMPP](https://www.apachefriends.org)
 
 After that you should run the command `composer install` in your project, which will import your packages and create the vendor folder, along with the autoload script.
 
