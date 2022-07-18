@@ -12,7 +12,7 @@ After that, execute the command `npm install` to install all the dependences and
 
 Finally, you should execute the command `npm start` that will open the following link [http://localhost:3000](http://localhost:3000) in your browser.
 
-## BackEnd
+### BackEnd
 
 To run this API you must have installed [PHP] [composer](https://getcomposer.org) and [Laravel](https://laravel.com)
 
