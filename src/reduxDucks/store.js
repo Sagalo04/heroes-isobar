@@ -1,7 +1,7 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 
 import charactersReducer from "reduxDucks/charactersDuck";
-import likesReducer,{restoreReactionsAction} from "reduxDucks/likesDuck"
+import likesReducer from "reduxDucks/likesDuck"
 
 import thunk from "redux-thunk";
 
@@ -9,14 +9,14 @@ import thunk from "redux-thunk";
  * Reducers
  */
 
- let rootReducer = combineReducers({
-    characters: charactersReducer,
-    reactions: likesReducer
-  });
-  
-  /**
- * Devtools
- */
+let rootReducer = combineReducers({
+  characters: charactersReducer,
+  reactions: likesReducer
+});
+
+/**
+* Devtools
+*/
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -28,6 +28,5 @@ export default function generateStore() {
     rootReducer,
     composeEnhancers(applyMiddleware(thunk))
   );
-  restoreReactionsAction()(store.dispatch)
   return store;
 }

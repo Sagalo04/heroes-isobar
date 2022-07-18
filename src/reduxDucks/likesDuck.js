@@ -1,3 +1,5 @@
+import { URL } from "constants/constants";
+
 /**
  * Constants
  */
@@ -53,18 +55,22 @@ export const AddReactionAction =
           likes: reaction ? array[i].likes + 1 : array[i].likes,
           dislikes: !reaction ? array[i].dislikes + 1 : array[i].dislikes,
         };
+        postData({ likes: array[i].likes, dislikes: array[i].dislikes }, id)
         exist = false;
         break;
       }
     }
 
     if (exist) {
+      const thumbnail = currentChar.thumbnail.path + "." + currentChar.thumbnail.extension
       const newReaction = {
         id: id,
-        character: currentChar,
+        name: currentChar.name,
         likes: reaction ? 1 : 0,
         dislikes: !reaction ? 1 : 0,
+        thumbnail: thumbnail
       };
+      postData({ heroe_id: id, likes: newReaction.likes, dislikes: newReaction.dislikes, name: currentChar.name, thumbnail: thumbnail }, id)
       array.push(newReaction);
     }
 
@@ -76,29 +82,31 @@ export const AddReactionAction =
     });
   };
 
-  /**
-   * Get all the ranking calling the array sort
-   */
-export const getRankingAction = () => (dispatch, getState) => {
-  dispatch({
-    type: GET_REACTIONS,
-  });
-  const { array } = getState().reactions;
-  sortLikes(dispatch, array);
-};
-
 /**
- * function that restore the state with the storage information
+ * function that restore the redux state using the local API and Get the ranking calling the array sort
  */
-export const restoreReactionsAction = () => (dispatch) => {
-  let storage = localStorage.getItem("storage");
-  storage = JSON.parse(storage);
-  if (storage && storage.reactions.array) {
-    dispatch({
-      type: GET_REACTIONS_SUCCESS,
-      payload: storage.reactions.array,
-    });
-  }
+export const restoreReactionsAction = () => async (dispatch) => {
+  let array = []
+  const reactionsResponse = await fetch(`${URL}reactions`)
+  const jsonReactions = await reactionsResponse.json()
+
+  await jsonReactions.forEach(async reaction => {
+    const newObject = {
+      likes: reaction.likes,
+      dislikes: reaction.dislikes,
+      id: reaction.heroe_id,
+      name: reaction.name,
+      thumbnail: reaction.thumbnail
+    }
+    array.push(newObject)
+  });
+
+  await dispatch({
+    type: GET_REACTIONS_SUCCESS,
+    payload: array,
+  });
+
+  sortLikes(dispatch, array);
 };
 
 /**
@@ -156,3 +164,25 @@ export const sortLikes = (dispatch, array) => {
     payload: ranking.splice(0, 10),
   });
 };
+
+/**
+ * 
+ * @param {object} data Information of the reactions to send to the API
+ * @param {string} id id to search at the API
+ * @returns 
+ */
+const postData = async (data, id) => {
+  const response = await fetch(`${URL}updateReaction/${id}`, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data)
+  });
+  return response.json()
+}

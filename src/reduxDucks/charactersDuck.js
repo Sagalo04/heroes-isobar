@@ -1,4 +1,4 @@
-import { URL, HASH, APIKEY } from "constants/constants";
+import { URL } from "constants/constants";
 
 /**
  * Constants
@@ -53,12 +53,12 @@ export default function reducer(state = initialData, action) {
  * Fetch 9 characters by page
  * @param {number} page number of page to fetch
  */
-export const getCharactersAction = (page) => (dispatch,getState) => {
+export const getCharactersAction = (page) => (dispatch, getState) => {
   dispatch({
     type: GET_CHARACTERS,
   });
   return fetch(
-    `${URL}?ts=1000&limit=9&offset=${page * 9}&apikey=${APIKEY}&hash=${HASH}`
+    `${URL}heroes/${page}`
   )
     .then((res) => res.json())
     .then((data) => {
@@ -85,7 +85,7 @@ export const getSingleCharacterAction = (id) => (dispatch, getState) => {
   dispatch({
     type: GET_CHARACTER,
   });
-  return fetch(`${URL}/${id}?ts=1000&apikey=${APIKEY}&hash=${HASH}`)
+  return fetch(`${URL}heroe/${id}`)
     .then((res) => res.json())
     .then((data) => {
       dispatch({
