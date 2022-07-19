@@ -34,7 +34,7 @@ function Home({
 
   return (
     <div className={styles.Home}>
-      <Grid.Container gap={2} justify="center" className={styles.homeGrid}>
+      <Grid.Container gap={2} justify="center" id={styles.homeGrid}>
         {chars ? (
           fetching ? (
             <div className={styles.Loading}>

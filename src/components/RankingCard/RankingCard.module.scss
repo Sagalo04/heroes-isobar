@@ -1,30 +1,30 @@
-.RankingCard{
-    display: flex;
-    background-color: #151827;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
+.RankingCard {
+  display: flex;
+  background-color: #151827;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
 
-    color: white;
+  color: white;
 }
 
-.Card{
-    background-color: #151827;
-    color: white;
-    width: 80%;
-    padding: 0;
-    margin-top: 1.5rem;
+#Card {
+  background-color: #151827;
+  color: white;
+  width: 80%;
+  padding: 0;
+  margin-top: 1.5rem;
 
-    border-radius: 30px;
+  border-radius: 30px;
 }
 
-.flexin2{
-    display: flex;
-    flex-direction: column;
+.flexin2 {
+  display: flex;
+  flex-direction: column;
 }
 
-.flexin{
-    display: flex;
-    gap: 1rem;
-    align-items: center;  
+.flexin {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
