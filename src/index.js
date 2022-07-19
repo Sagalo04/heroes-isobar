@@ -6,17 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import generateStore from "reduxDucks/store";
 import { BrowserRouter } from "react-router-dom";
+import { NextUIProvider } from '@nextui-org/react';
 
 const store = generateStore();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <NextUIProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </NextUIProvider>
   </React.StrictMode>
 );
 
