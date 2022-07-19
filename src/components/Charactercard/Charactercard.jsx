@@ -28,7 +28,7 @@ function Charactercard({
           origin: {
             x: x / window.innerWidth,
             y: y / window.innerHeight,
-          }
+          },
         })
       : confetti({
           particleCount: 100,
@@ -44,10 +44,7 @@ function Charactercard({
   };
 
   return (
-    <Card
-      className={styles.card_link}
-      style={!description ? { gap: "1rem" } : null}
-    >
+    <Card id={styles.card_link} style={!description ? { gap: "1rem" } : null}>
       <div className={styles.info}>
         <Avatar src={src} size="xl" />
         <div>
@@ -71,7 +68,7 @@ function Charactercard({
           />
           <Icon
             onClick={(e) => {
-              handleConfetti(e.clientX, e.clientY,true);
+              handleConfetti(e.clientX, e.clientY, true);
               reactHandler(false, `${id}`, currentChar);
             }}
             className={styles.clickeableIcon}

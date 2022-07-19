@@ -1,36 +1,36 @@
-.Home{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+.Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
-.homeGrid{
-    width: 80%;
-    margin-top: 2rem;
+#homeGrid {
+  width: 80%;
+  margin-top: 2rem;
 }
 
-.Loading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
+.Loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
 }
 
-.paginator{
-    margin-top: 1rem;
+.paginator {
+  margin-top: 1rem;
 }
 
 /**MediaQueries**/
 @media screen and (max-width: 960px) {
-    .Home{
-        padding-bottom: 2rem;
-    }
-    .homeGrid{
-        width: 100%;
-        margin-top: 5rem;
-    }
+  .Home {
+    padding-bottom: 2rem;
+  }
+  .homeGrid {
+    width: 100%;
+    margin-top: 5rem;
+  }
 }
