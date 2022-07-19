@@ -1,4 +1,4 @@
-.card_link{
+.card_link {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,11 +16,12 @@
     gap: 1rem;
     align-items: center;
   }
-  h4, p{
+  h4,
+  p {
     margin-top: 0;
   }
 
-  h4{
+  h4 {
     margin-bottom: 1rem;
   }
   p {
@@ -36,14 +37,14 @@
     align-items: center;
     justify-content: space-between;
 
-    a{
+    a {
       font-weight: 700;
       color: aliceblue;
     }
-    .reactions_react{
+    .reactions_react {
       display: flex;
-      gap: .5rem;
-      .clickeableIcon:hover{
+      gap: 0.5rem;
+      .clickeableIcon:hover {
         cursor: pointer;
         transform: scale(1.1);
         transition: all ease 0.5s;

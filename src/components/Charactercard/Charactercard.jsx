@@ -1,9 +1,9 @@
-import { Avatar, Card } from "@nextui-org/react";
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Charactercard.module.scss";
 import { Icon } from "@iconify/react";
 import confetti from "canvas-confetti";
+import styles from "./Charactercard.module.scss";
+import { Avatar, Card } from "@nextui-org/react";
 
 function Charactercard({
   id,
@@ -28,7 +28,7 @@ function Charactercard({
           origin: {
             x: x / window.innerWidth,
             y: y / window.innerHeight,
-          }
+          },
         })
       : confetti({
           particleCount: 100,
@@ -71,7 +71,7 @@ function Charactercard({
           />
           <Icon
             onClick={(e) => {
-              handleConfetti(e.clientX, e.clientY,true);
+              handleConfetti(e.clientX, e.clientY, true);
               reactHandler(false, `${id}`, currentChar);
             }}
             className={styles.clickeableIcon}
