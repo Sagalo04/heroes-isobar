@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { NextUIProvider } from '@nextui-org/react';
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import generateStore from "reduxDucks/store";
 import { BrowserRouter } from "react-router-dom";
-import { NextUIProvider } from '@nextui-org/react';
 
 const store = generateStore();
 

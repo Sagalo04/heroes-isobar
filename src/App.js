@@ -1,9 +1,9 @@
-import "./App.css";
 import Home from "pages/Home/Home";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Character from "pages/Character/Character";
 import Ranking from "pages/Ranking/Ranking";
 import Navbar from "components/Navbar/Navbar";
+import "./App.css";
 
 function App() {
   return (

@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Grid, Loading, Pagination } from "@nextui-org/react";
-import styles from "./Home.module.scss";
-import Charactercard from "components/Charactercard/Charactercard.jsx";
 import { connect } from "react-redux";
 import { getCharactersAction } from "reduxDucks/charactersDuck";
 import { AddReactionAction } from "reduxDucks/likesDuck";
+import Charactercard from "components/Charactercard/Charactercard.jsx";
+import styles from "./Home.module.scss";
 
 /**
  * Homepage
@@ -16,7 +16,6 @@ function Home({
   getCharactersAction,
   AddReactionAction,
 }) {
-
   const [page, setPage] = useState(0);
 
   useEffect(() => {
